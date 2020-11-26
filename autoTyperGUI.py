@@ -9,18 +9,17 @@ import multiprocessing
 import sys
 
 
-def typing():
-	interval = float(ent_interval.get())
-	delay = int(ent_delay.get())
+def typing(delay, interval, data):
+	delay = int(delay)
 	time.sleep(delay)
-	data = txt_box.get("1.0", tk.END)
 	import pyautogui
+	pyautogui.FAILSAFE = False
 	pyautogui.write(data, interval=interval)
 
 
 def start_typing():
 	global t1
-	t1 =  multiprocessing.Process(target=typing)
+	t1 =  multiprocessing.Process(target=typing, args=(ent_delay.get(), ent_interval.get(), txt_box.get("1.0", tk.END)))
 	t1.start()
 	messagebox.showinfo("Message", "Click on the Window where you want text to be typed.") 
 
@@ -34,6 +33,7 @@ def stop_typing():
 
 def exit_program():
 	sys.exit()
+
 
 def select_all(event):
     txt_box.tag_add(tk.SEL, "1.0", tk.END)
@@ -75,10 +75,31 @@ def create_about_window():
 	about_window.mainloop()
 
 
+def configure_weight():
+	# frm_params
+	frm_params.columnconfigure(0, weight=1)
+	frm_params.columnconfigure(1, weight=1)
+	frm_params.rowconfigure(0, weight=1)
+	frm_params.rowconfigure(1, weight=1)
+	# frm_buttons
+	frm_buttons.columnconfigure(0, weight=1)
+	frm_buttons.columnconfigure(1, weight=1)
+	frm_buttons.columnconfigure(2, weight=1)
+	frm_buttons.rowconfigure(0, weight=1)
+	# main window
+	window.columnconfigure(0, weight=1)
+	window.rowconfigure(0, weight=1)
+	window.rowconfigure(1, weight=1)
+	window.rowconfigure(2, weight=1)
+	window.rowconfigure(3, weight=1)
+	window.rowconfigure(4, weight=1)	
+
+
 def create_main_window():
 	window.title("Auto Typer")
 
 	# Params Frame
+	global frm_params
 	frm_params = tk.Frame()
 	frm_params.grid(row=0,column=0)
 
@@ -88,7 +109,7 @@ def create_main_window():
 
 	global ent_delay
 	ent_delay =  tk.Entry(justify='center', master=frm_params)
-	ent_delay.insert(0, "5")
+	ent_delay.insert(0, "10")
 	ent_delay.grid(row=1,column=0, padx=50)
 
 	# Interval
@@ -112,6 +133,7 @@ def create_main_window():
 	txt_box.bind("<Control-Key-A>", select_all)
 
 	# Buttons Frame
+	global frm_buttons
 	frm_buttons = tk.Frame()
 	frm_buttons.grid(row=5,column=0)
 
@@ -131,15 +153,10 @@ def create_main_window():
 	start = tk.Button(text="About", command=create_about_window)
 	start.grid(row=6,column=0, padx=10, pady=10)
 
+	configure_weight()
 	window.mainloop()
 
-
-window = tk.Tk()
-create_main_window()
-
-
-# # Gravity
-# window.columnconfigure(0, weight=1)
-# window.rowconfigure(3, weight=1)
-# window.columnconfigure(1, weight=1)
-# window.rowconfigure(1, weight=1)
+if __name__ == '__main__':
+	multiprocessing.freeze_support()
+	window = tk.Tk()
+	create_main_window()
