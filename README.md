@@ -6,7 +6,7 @@ Sometimes we have to write content in programs where copy-paste is not allowed, 
 https://github.com/Parveshdhull/AutoTyper/releases/tag/v1.0
 
 ## Screenshot
-<img src="images/1.png" alt="Screenshot" height="350"/><img src="Linux Executable/screenshot.png" alt="Screenshot" height="350"/>
+<img src="Linux Executable/screenshot.png" alt="Screenshot" height="350"/>
 
 ## Python Version:
 Python 3
