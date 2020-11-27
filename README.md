@@ -3,7 +3,7 @@
 Sometimes we have to write content in programs where copy-paste is not allowed, like in data entry software Notepad RT. There are many tools available online but almost all of them only provide trial versions. And requires big payment for continued access. And even if they are free, it is not wise to give complete access to a keyboard to any third-party software. So I wrote this simple-short python script which reads content from a text file then simulates keyboard typing. This Script works on both Linux and Windows.
 
 ## Releases
-https://github.com/Parveshdhull/AutoTyper/releases/tag/v1.0
+https://github.com/Parveshdhull/AutoTyper/releases
 
 ## Screenshot
 <img src="Linux Executable/screenshot.png" alt="Screenshot" height="350"/>
