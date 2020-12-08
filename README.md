@@ -37,6 +37,9 @@ pacman -S tk
 
 	python autoTyperGUI.py
 
+## YouTube Tutorial
+https://www.youtube.com/watch?v=NCKswqYyZmg
+
 ## Troubleshooting
 If you encounter any problem and need my help,you can reach me at "git.hrca@gmail.com"
 
