@@ -41,7 +41,7 @@ pacman -S tk
 https://www.youtube.com/watch?v=NCKswqYyZmg
 
 ## Troubleshooting
-If you encounter any problem and need my help,you can reach me at "git.hrca@gmail.com"
+If you encounter any problem and need my help,you can reach me at "right2trick@gmail.com"
 
 ## Liked my work?
 <a href="https://www.buymeacoffee.com/parveshmonu" target="_blank"><img src="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png" alt="Buy Me A Coffee" style="height: 41px !important;width: 174px !important;box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;-webkit-box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;" ></a>
