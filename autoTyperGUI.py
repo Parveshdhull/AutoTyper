@@ -19,7 +19,7 @@ def typing(delay, interval, data):
 
 def start_typing():
 	global t1
-	t1 =  multiprocessing.Process(target=typing, args=(ent_delay.get(), ent_interval.get(), txt_box.get("1.0", tk.END)))
+	t1 =  multiprocessing.Process(target=typing, args=(ent_delay.get(), ent_interval.get(), txt_box.get("1.0", tk.END)[:-1]))
 	t1.start()
 	messagebox.showinfo("Message", "Click on the Window where you want text to be typed.") 
 
